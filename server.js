@@ -15,6 +15,9 @@ connectDB();
 
 //Arquivos de rota
 const users = require('./routes/users');
+const people = require('./routes/people');
+const relations = require('./routes/relations');
+const relationships = require('./routes/relationships');
 
 //Inicialização do framework express
 const app = express();
@@ -31,7 +34,10 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 //Criação de rotas
-app.use('/users', users)
+app.use('/api/v1/users', users);
+app.use('/api/v1/people', people);
+app.use('/api/v1/relations', relations);
+app.use('/api/v1/relationships', relationships);
 
 //Adiciona o errorHandler para uso do express
 app.use(errorHandler);
