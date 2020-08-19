@@ -52,6 +52,13 @@ function validation() {
 personSchema.virtual('relationships', {
   ref: 'Relationship',
   localField: '_id',
+  foreignField: 'person1',
+  justOne: false
+});
+
+personSchema.virtual('relationships2', {
+  ref: 'Relationship',
+  localField: '_id',
   foreignField: 'person2',
   justOne: false
 });
